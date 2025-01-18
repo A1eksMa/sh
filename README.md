@@ -68,13 +68,23 @@ Save and exit the editor.
 
 ```bash
 #!/bin/bash
-apt update && apt upgrade -y
+apt update && apt upgrade -y && apt autoremove -y
 (crontab -l ; echo "0 0 * * * apt update && apt upgrade -y") | crontab -
 ```
 This command appends the new cron task to the existing crontab file
 
 
 ### Use firewalls
+```bash
+#!/bin/bash
+apt install ufw
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+ufw enable
+ufw status verbose
+```
+
 ### Consider using Linux as your web server operating system
 ### Utilize VPNs and private networks
 ### Use a multi-server environment
