@@ -7,11 +7,9 @@ To update packages on a Linux server:
 ```bash
 apt update
 apt upgrade -y
-apt autoremove
 ```
-To set up a cron task to run updates at 24:00 every day:
+To set up a cron task to run updates at 24:00 every day, open the crontab editor:
 ```bash
-# Open the crontab editor
 crontab -e
 ```
 This will open the crontab editor in the default text editor. Add the following line to the file:
@@ -25,9 +23,10 @@ Save and exit the editor.
 ```bash
 #!/bin/bash
 apt update && apt upgrade -y
+apt install -y cron
 (crontab -l ; echo "0 0 * * * apt update && apt upgrade -y") | crontab -
 ```
-This command appends the new cron job to the existing crontab file
+This command appends the new cron task to the existing crontab file
 
 
 ### Use firewalls
