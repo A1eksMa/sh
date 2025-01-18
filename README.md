@@ -1,12 +1,24 @@
 # ServerSecurity
 ## Key Steps to Make Your Web Server Secure:
 ### Create strong passwords
+### Limit superuser/root access
+```bash
+#!/bin/bash
+useradd -m -s /bin/bash username
+usermod -aG sudo,adm username
+{ echo 'StrongUserPa$$w0rd'; echo 'StrongUserPa$$w0rd'; } | passwd username
+
+echo 'Match User sky' >> /etc/ssh/sshd_config
+echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+systemctl restart sshd
+```
 ### Generate an SSH key pair
 ### Keep your server updated
 To update packages on a Linux server:
 ```bash
 apt update
 apt upgrade -y
+apt autoremove -y
 ```
 To set up a cron task to run updates at 24:00 every day, open the crontab editor:
 ```bash
@@ -31,7 +43,6 @@ This command appends the new cron task to the existing crontab file
 
 ### Use firewalls
 ### Consider using Linux as your web server operating system
-### Limit superuser/root access
 ### Utilize VPNs and private networks
 ### Use a multi-server environment
 ### Employ dedicated servers for maximum security
