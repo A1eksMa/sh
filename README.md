@@ -8,7 +8,7 @@ useradd -m -s /bin/bash username
 usermod -aG sudo,adm username
 { echo 'StrongUserPa$$w0rd'; echo 'StrongUserPa$$w0rd'; } | passwd username
 
-echo 'Match User sky' >> /etc/ssh/sshd_config
+echo 'Match User username' >> /etc/ssh/sshd_config
 echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 systemctl restart sshd
 ```
