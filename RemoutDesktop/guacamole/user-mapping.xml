@@ -1,0 +1,28 @@
+<user-mapping>
+<authorize username="user" password="123">
+
+<connection name="SSH">
+<protocol>ssh</protocol>
+<param name="hostname">localhost</param>
+<param name="port">22</param>
+</connection>
+
+<connection name="RDP">
+<protocol>rdp</protocol>
+<param name="hostname">localhost</param>
+<param name="port">3389</param>
+<param name="username">user</param>
+<param name="password">123</param>
+<param name="ignore-cert">true</param>
+</connection>
+
+<connection name="VNC">
+<protocol>vnc</protocol>
+<param name="hostname">localhost</param>
+<param name="port">5901</param>
+<param name="username">root</param>
+<param name="password">VNCUser</param>
+</connection>
+
+</authorize>
+</user-mapping>
