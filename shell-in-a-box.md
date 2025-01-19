@@ -6,7 +6,7 @@ systemctl start shellinabox.service
 nano /etc/default/shellinabox
 ```
 ```/etc/default/shellinabox
-Should shellinaboxd start automatically
+# Should shellinaboxd start automatically
 SHELLINABOX_DAEMON_START=1                                                                                                                        
                                                                                                                                                   
 # TCP port that shellinboxd's webserver listens on
