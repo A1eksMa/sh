@@ -13,6 +13,7 @@ export GIT_EMAIL="you@example.com"
 export GIT_USER="Your Name"
 ```
 Press `Ctrl + o` and `Enter` to save, and after press `Ctrl + x` to quit.
+
 Reload the `.bashrc` file by running the command:
 ```bash
 source ~/.bashrc
