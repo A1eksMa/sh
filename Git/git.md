@@ -1,5 +1,7 @@
 # GIT
-Set environment variables.
+
+## Set environment variables
+
 Open the `.bashrc` file in a text editor using the command:
 ```bash
 nano ~/.bashrc
@@ -22,7 +24,7 @@ source ~/.bashrc
 apt update
 apt install git
 ```
-# Configure
+## Configure
 ```bash
 git config --global user.email $GIT_EMAIL
 git config --global user.name $GIT_USER
