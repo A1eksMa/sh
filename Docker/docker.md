@@ -1,5 +1,6 @@
 # Install Docker
 Installation guide from official dockerdocks [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
+
 Use `docker_installer.sh` script to run all steps below. The script requires root or sudo privileges.
 
 ## Uninstall all conflicting packages
