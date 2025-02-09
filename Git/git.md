@@ -10,7 +10,7 @@ Add the following block lines to the end of the file:
 ```~/.bashrc
 # Configure git
 export GIT_EMAIL="you@example.com"
-export GIT_USER="Your Name"
+export GIT_USER="Your_Name"
 ```
 Press `Ctrl + o` and `Enter` to save, and after press `Ctrl + x` to quit.
 
