@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $GIT_USER | echo $GIT_TOKEN | git push origin main
+git push http://$GIT_TOKEN@github.com/A1eksMa/sh.git main
