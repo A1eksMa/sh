@@ -21,8 +21,7 @@ source ~/.bashrc
 
 ## Install
 ```bash
-apt update
-apt install git
+sudo apt update && sudo apt install git
 ```
 ## Configure
 ```bash
