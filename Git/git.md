@@ -1,4 +1,4 @@
-# GIT
+# Install GIT
 
 ## Set environment variables
 
