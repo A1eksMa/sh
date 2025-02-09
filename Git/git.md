@@ -11,7 +11,6 @@ Add the following block lines to the end of the file:
 # Configure git
 export GIT_EMAIL="you@example.com"
 export GIT_USER="Your Name"
-export GIT_TOKEN="Your Secret Token"
 ```
 Press `Ctrl + o` and `Enter` to save, and after press `Ctrl + x` to quit.
 Reload the `.bashrc` file by running the command:
