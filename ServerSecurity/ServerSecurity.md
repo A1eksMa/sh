@@ -41,33 +41,12 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 
 Congratulations! Now you have access to the server by SSH (without password authorization).
 
-## Set environment variables
+## Update server
 
 Go to the remoute server as a root user and configure it!
 ```bash
 ssh root@host
 ```
-
-Open the `.bashrc` file in a text editor using the command:
-```bash
-nano ~/.bashrc
-```
-
-Add the following block lines to the end of the file:
-```~/.bashrc
-export EMAIL="your@email.com"
-export USER="your_user_name"
-export USER_PASSWORD="StrongUserPa$$w0rd"
-export USER_RSA_PUB="id_rsa.pub_for_your_user"
-```
-
-Press `Ctrl + o` and `Enter` to save, and after press `Ctrl + x` to quit.
-Reload the `.bashrc` file by running the command:
-```bash
-source ~/.bashrc
-```
-
-## Update
 
 To update packages on a Linux server:
 ```bash
@@ -84,7 +63,7 @@ This will open the crontab editor in the default text editor. Add the following 
 0 0 * * * apt update && apt upgrade -y
 ```
 Save and exit the editor.  
-Run script [`AutoUpdate.sh`](AutoUpdate.sh) to update your system and configures cron to autoupdates. 
+Run script [`AutoUpdate.sh`](AutoUpdate.sh) to update your system and configures cron to autoupdates.
 
 ## Firewall
 
@@ -133,8 +112,30 @@ To see ufw status:
 ufw status verbose
 ```
 
-## Add non-root user
 
+## Add non-root user
+### Set environment variables
+
+Open the `.bashrc` file in a text editor using the command:
+```bash
+nano ~/.bashrc
+```
+
+Add the following block lines to the end of the file:
+```~/.bashrc
+export EMAIL="your@email.com"
+export USER="your_user_name"
+export USER_PASSWORD="StrongUserPa$$w0rd"
+export USER_RSA_PUB="id_rsa.pub_for_your_user"
+```
+
+Press `Ctrl + o` and `Enter` to save, and after press `Ctrl + x` to quit.
+Reload the `.bashrc` file by running the command:
+```bash
+source ~/.bashrc
+```
+
+### Add and configure non-root user
 Run script [`AddUser.sh`](AddUser.sh) to execute steps below.
 This script add non-root user with sudo privilegies and configures his password and SSH access to a server.
 
@@ -191,7 +192,7 @@ chmod 400 /home/$USER/.ssh/authorized_keys
 chown $USER:$USER /home/$USER -R
 ```
 
-## Configure SSH
+### Configure SSH access
 
 Open file `sshd_config` in text editor:
 ```bash
