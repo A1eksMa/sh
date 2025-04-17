@@ -108,7 +108,7 @@ mkdir /home/$USER/.ssh
 chmod 700 /home/$USER/.ssh
 ```
 
-Copy id_rsa.pub into file /home/$USER/.ssh/authorized_keys from environment variable:
+Copy `id_rsa.pub` into file `/home/$USER/.ssh/authorized_keys` from environment variable:
 ```bash
 cd /home/$USER/.ssh/
 touch authorized_keys
@@ -142,7 +142,7 @@ PasswordAuthentication no
 Press `Ctrl + o` and `Enter` to save, and after press `Ctrl + x` to quit.
 
 Optional: 
-Sometimes it needed to authorizade on a remoute server with password. 
+Sometimes it needed to authorizate user on a remoute server with password. 
 Allow user password authentication:
 ```bash
 echo "Match User username" >> /etc/ssh/sshd_config
