@@ -97,12 +97,12 @@ Open SSH port to save connection with a remoute server:
 ufw allow ssh
 ```
 
-Start ufw:
+To start ufw:
 ```bash
 ufw enable
 ```
 
-Stop ufw
+To stop ufw:
 ```bash
 ufw disable
 ```
