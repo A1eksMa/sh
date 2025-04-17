@@ -88,8 +88,8 @@ Run script [`AutoUpdate.sh`](AutoUpdate.sh) to update your system and configures
 
 ## Firewall
 
-To use firewall, entry to a server as a root.
-Sudo privillegies requared to use ufw as a non-root user.
+To use firewall, entry to a server as a root.  
+Sudo privillegies requared to use ufw as a non-root user.  
 Run script [`ufw.sh`](ufw.sh) to minimal configure the `ufw`.
 
 ```bash
