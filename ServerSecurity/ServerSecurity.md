@@ -28,8 +28,8 @@ ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
 ```
 
 To use public key authentication, the public key must be copied to a server and installed in an `authorized_keys` file.
-This can be conveniently done using the ssh-copy-id tool.
-Replace `user@host` with yours user and host!
+This can be conveniently done using the ssh-copy-id tool.  
+Replace `user@host` with yours user and host!  
 Like this: `root@123.45.678.91`
 ```bash
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
