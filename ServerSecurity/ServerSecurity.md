@@ -24,7 +24,7 @@ Type `Enter` to skip this options or set RSA file name and secret passphrase:
 >> Your public key has been saved in /home/user/.ssh/id_rsa.pub.
 ```
 
-If you get the `id_rsa` key, you can generate the public key only:
+If you get the private key, you can generate the public key only:
 ```bash
 ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
 ```
