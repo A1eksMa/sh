@@ -39,7 +39,7 @@ Like this: `root@123.45.678.91`
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 ```
 
-Congratulations! Now we have access to the server by SSH (without password):
+Congratulations! Now you have access to the server by SSH (without password authorization):
 ```bash
 ssh user@host
 ```
