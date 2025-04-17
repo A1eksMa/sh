@@ -13,7 +13,7 @@ Generate an SSH key pair on a local computer:
 ssh-keygen -t rsa -b 4096
 ```
 
-Type `Enter` to skip this options:
+Type `Enter` to skip this options or set RSA file name and secret passphrase:
 ```
 >> Enter file in which to save the key (/home/user/.ssh/id_rsa):
 >> Enter passphrase (empty for no passphrase):
@@ -27,7 +27,7 @@ If you get the `id_rsa` key, you can generate the public key only:
 ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
 ```
 
-To use public key authentication, the public key must be copied to a server and installed in an `authorized_keys` file.
+To use public key authentication, the public key must be copied to a server and installed in an `authorized_keys` file.  
 This can be conveniently done using the ssh-copy-id tool.  
 Replace `user@host` with yours user and host!  
 Like this: `root@123.45.678.91`
@@ -36,7 +36,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 ```
 There are:
 - `user` yours user name on a server,
-- `host` is a server IP adress,that looks like a xxx.xxx.xxx.xxx
+- `host` is a server IP adress, that looks like a xxx.xxx.xxx.xxx
 
 Congratulations! Now we have access to the server by SSH (without password):
 ```bash
