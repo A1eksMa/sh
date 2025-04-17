@@ -1,5 +1,5 @@
 # Server Security
-[My First 5 Minutes On A Server; Or, Essential Security for Linux Servers • Bryan Kennedy](https://github.com/A1eksMa/sh/blob/main/links/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers.md), 
+[My First 5 Minutes On A Server; Or, Essential Security for Linux Servers • Bryan Kennedy](https://github.com/A1eksMa/sh/blob/main/links/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers.md),   
 [Первые 10 минут на сервере](https://habr.com/ru/companies/rootwelt/articles/303462/)
 
 ## Key Steps to Make Your Web Server Secure:
@@ -51,7 +51,32 @@ echo "    PasswordAuthentication yes" >> /etc/ssh/sshd_config
 systemctl restart sshd
 ```
 ### Generate an SSH key pair
-Generate an SSH key pair for root
+Generate an SSH key pair for root on a local computer:
+- rsa - an old algorithm based on the difficulty of factoring large numbers,
+- key size of at least 2048 bits is recommended for RSA; 4096 bits is better.
+  
+```bash
+ssh-keygen -t rsa -b 4096
+```
+
+Click `Enter` to skip this options:
+```
+>> Enter file in which to save the key (/home/user/.ssh/id_rsa):
+>> Enter passphrase (empty for no passphrase):
+>> Enter same passphrase again:
+>> Your identification has been saved in /home/user/.ssh/id_rsa.
+>> Your public key has been saved in /home/user/.ssh/id_rsa.pub.
+```
+
+If you get the `id_rsa` key, you can generate the public key only:
+```bash
+ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
+```
+
+To use public key authentication, the public key must be copied to a server and installed in an `authorized_keys` file. This can be conveniently done using the ssh-copy-id tool. Like this:
+```bash
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
+```
 
 Generate an SSH key pair for non-root user
 ```bash
