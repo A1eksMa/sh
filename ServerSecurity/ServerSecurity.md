@@ -1,8 +1,10 @@
 # Server Security
+
 ## Links
 - [My First 5 Minutes On A Server; Or, Essential Security for Linux Servers • Bryan Kennedy](https://github.com/A1eksMa/sh/blob/main/links/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers.md)
 - [First 10 Minutes On A Server • Den Rootwelt](https://habr.com/ru/companies/rootwelt/articles/303462/)
 - [How to Use ssh-keygen to Generate a New SSH Key?](https://www.ssh.com/academy/ssh/keygen)
+
 
 ## Configure security shell (SSH)
 
@@ -30,14 +32,13 @@ ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
 
 To use public key authentication, the public key must be copied to a server and installed in an `authorized_keys` file.  
 This can be conveniently done using the ssh-copy-id tool.  
-Replace `user@host` with yours user and host!  
+Replace `user@host` with yours user and host! There are:
+- `user` yours user name on a server,
+- `host` is a server IP adress, that looks like a xxx.xxx.xxx.xxx  
 Like this: `root@123.45.678.91`
 ```bash
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 ```
-There are:
-- `user` yours user name on a server,
-- `host` is a server IP adress, that looks like a xxx.xxx.xxx.xxx
 
 Congratulations! Now we have access to the server by SSH (without password):
 ```bash
