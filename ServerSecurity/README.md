@@ -63,12 +63,11 @@ This will open the crontab editor in the default text editor. Add the following 
 0 0 * * * apt update && apt upgrade -y
 ```
 Save and exit the editor.  
-Run script [`AutoUpdate.sh`](AutoUpdate.sh) to update your system and configures cron to autoupdates.
+Run script [`autoupdate.sh`](autoupdate.sh) to update your system and configures cron to autoupdates.
 
 ## Firewall
 
-To use firewall, entry to a server as a root.  
-Sudo privillegies requared to use ufw as a non-root user.  
+To use firewall requires root or sudo privileges.  
 Run script [`ufw.sh`](ufw.sh) to minimal configure the `ufw`.
 
 ```bash
@@ -136,7 +135,7 @@ source ~/.bashrc
 ```
 
 ### Add and configure non-root user
-Run script [`AddUser.sh`](AddUser.sh) to execute steps below.
+Run script [`add_user.sh`](add_user.sh) to execute steps below.
 This script add non-root user with sudo privilegies and configures his password and SSH access to a server.
 
 Create the user if user variable is set:
