@@ -39,19 +39,15 @@ Like this: `root@123.45.678.91`
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 ```
 
-Congratulations! Now you have access to the server by SSH (without password authorization):
-```bash
-ssh user@host
-```
+Congratulations! Now you have access to the server by SSH (without password authorization).
 
-## Add non-root user
+## Set environment variables
 
-Go to the remoute server as a root user:
+Go to the remoute server as a root user and configure it!
 ```bash
 ssh root@host
 ```
 
-Set environment variables.
 Open the `.bashrc` file in a text editor using the command:
 ```bash
 nano ~/.bashrc
@@ -70,6 +66,74 @@ Reload the `.bashrc` file by running the command:
 ```bash
 source ~/.bashrc
 ```
+
+## Update
+
+To update packages on a Linux server:
+```bash
+apt update
+apt upgrade -y
+apt autoremove -y
+```
+To set up a cron task to run updates at 24:00 every day, open the crontab editor:
+```bash
+crontab -e
+```
+This will open the crontab editor in the default text editor. Add the following line to the file:
+```bash
+0 0 * * * apt update && apt upgrade -y
+```
+Save and exit the editor.  
+Run script [`AutoUpdate.sh`](AutoUpdate.sh) to update your system and configures cron to autoupdates. 
+
+## Firewall
+
+To use firewall, entry to a server as a root.
+Sudo privillegies requared to use ufw as a non-root user.
+Run script [`ufw.sh`](ufw.sh) to minimal configure the `ufw`.
+
+```bash
+apt update && apt upgrade -y
+apt install ufw
+```
+
+Check IPv6 support. Open ufw configure:
+```bash
+nano /etc/default/ufw
+```
+
+Turn on `IPv6`:
+```/etc/default/ufw
+IPV6=yes
+```
+
+It's recomended to deny all incoming and allow all outgoing flows:
+```bash
+ufw default deny incoming
+ufw default allow outgoing
+```
+
+Open SSH port to save connection with a remoute server:
+```bash
+ufw allow ssh
+```
+
+Start ufw:
+```bash
+ufw enable
+```
+
+Stop ufw
+```bash
+ufw disable
+```
+
+To see ufw status:
+```bash
+ufw status verbose
+```
+
+## Add non-root user
 
 Run script [`AddUser.sh`](AddUser.sh) to execute steps below.
 This script add non-root user with sudo privilegies and configures his password and SSH access to a server.
@@ -158,71 +222,4 @@ systemctl restart sshd
 To restart SSH service:
 ```bash
 service ssh restart
-```
-
-## Keep your server updated
-
-To update packages on a Linux server:
-```bash
-apt update
-apt upgrade -y
-apt autoremove -y
-```
-To set up a cron task to run updates at 24:00 every day, open the crontab editor:
-```bash
-crontab -e
-```
-This will open the crontab editor in the default text editor. Add the following line to the file:
-```bash
-0 0 * * * apt update && apt upgrade -y
-```
-Save and exit the editor.  
-Run script [`AutoUpdate.sh`](AutoUpdate.sh) to update your system and configures cron to autoupdates. 
-
-
-## Use firewalls
-
-To use firewall, entry to a server as a root.
-Sudo privillegies requared to use ufw as a non-root user.
-Run script [`ufw.sh`](ufw.sh) to minimal configure the `ufw`.
-
-```bash
-apt update && apt upgrade -y
-apt install ufw
-```
-
-Check IPv6 support. Open ufw configure:
-```bash
-nano /etc/default/ufw
-```
-
-Turn on `IPv6`:
-```/etc/default/ufw
-IPV6=yes
-```
-
-It's recomended to deny all incoming and allow all outgoing flows:
-```bash
-ufw default deny incoming
-ufw default allow outgoing
-```
-
-Open SSH port to save connection with a remoute server:
-```bash
-ufw allow ssh
-```
-
-Start ufw:
-```bash
-ufw enable
-```
-
-Stop ufw
-```bash
-ufw disable
-```
-
-To see ufw status:
-```bash
-ufw status verbose
 ```
