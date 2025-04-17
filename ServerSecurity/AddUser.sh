@@ -23,10 +23,10 @@ fi
 # Add user to sudo group
 usermod -aG sudo $USER
 
-# Allow user password authentication
-echo "Match User username" >> /etc/ssh/sshd_config
-echo "    PasswordAuthentication yes" >> /etc/ssh/sshd_config
-systemctl restart sshd
+# Allow user password authentication. Uncomment this block, if you need.
+# echo "Match User username" >> /etc/ssh/sshd_config
+# echo "    PasswordAuthentication yes" >> /etc/ssh/sshd_config
+# systemctl restart sshd
 
 # Configure SSH access
 mkdir /home/$USER/.ssh
