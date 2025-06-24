@@ -9,11 +9,10 @@ tar -czf archive-name.tar.gz file-name...
 ```
 
 Here’s what the command options mean:
-
-    - c - instructs tar to create a new archive.
-    - z - sets the compression method to gzip.
-    - f archive-name.tar.gz - specifies the archive name.
-    - file-name... a space-separated list of files and directories to be added to the archive.
+- c - instructs tar to create a new archive.
+- z - sets the compression method to gzip.
+- f archive-name.tar.gz - specifies the archive name.
+- file-name... a space-separated list of files and directories to be added to the archive.
 
 If you want to create the tar.gz in a specific directory, provide a full path to the archive file:
 ```bash
