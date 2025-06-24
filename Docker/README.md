@@ -39,11 +39,19 @@ This command downloads a test image and runs it in a container. When the contain
 
 ## Troubleshooting
 
-Sometimes (Raspberry Pi OS 64-bit, based on Debian) it needs to configure DNS-servers. Add it to `/etc/resolv.conf`:
+Sometimes (Raspberry Pi OS 64-bit, based on Debian) it needs to configure DNS-servers.
+
+Open config file `sudo nano /etc/resolv.conf` and add the following under existing nameservers:
 
 ```/etc/resolv.conf
 nameserver 8.8.8.8
 nameserver 8.8.4.4
+```
+
+And restart daemon and docker service:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
 
 
