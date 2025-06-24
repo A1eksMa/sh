@@ -37,5 +37,15 @@ sudo docker run hello-world
 ```
 This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits.
 
+## Troubleshooting
+
+Sometimes (Raspberry Pi OS 64-bit, based on Debian) it needs to configure DNS-servers. Add it to `/etc/resolv.conf`:
+
+```/etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+
+
 
 
