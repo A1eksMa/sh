@@ -26,8 +26,7 @@ docker build -t notebook .
 
 Run container:
 ```bash
-docker run -d \
+docker run  \
     --name notebook \
-    --hostname notebook \
     -p 80:8888 notebook
 ```
