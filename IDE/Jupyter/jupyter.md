@@ -21,10 +21,13 @@ Dockerfile contains Jupyter Notebook based on Python 3.11: slim image.
 
 Build container:
 ```bash
-docker build -t jupyter .
+docker build -t notebook .
 ```
 
 Run container:
 ```bash
-docker run -p 80:8888 jupyter
+docker run -d \
+    --name notebook \
+    --hostname notebook \
+    -p 80:8888 notebook
 ```
