@@ -54,12 +54,12 @@ Here are the steps to update Hugo to a specific version:
 
 3.  **Download the File:** Use the `wget` command to download the package. For example:
     ```bash
-    wget https://github.com/gohugoio/hugo/releases/download/v0.128.0/hugo_extended_0.128.0_linux-amd64.deb
+    wget https://github.com/gohugoio/hugo/releases/download/v0.148.0/hugo_extended_0.148.0_linux-amd64.deb
     ```
 
 4.  **Install the Package:** Use the `dpkg` (Debian Package Manager) to install the downloaded file. This command requires administrator privileges.
     ```bash
-    sudo dpkg -i hugo_extended_0.128.0_linux-amd64.deb
+    sudo dpkg -i hugo_extended_0.148.0_linux-amd64.deb
     ```
 
 5.  **Verify the Update:** After the installation is complete, you can confirm the new version by running:
