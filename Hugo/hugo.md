@@ -33,15 +33,6 @@ Before installing Hugo, you may need a package manager depending on your operati
     *   For Debian-based systems, you can use the command: `sudo apt install hugo`.
     *   You can also use Snap to install Hugo with the command: `sudo snap install hugo`.
 
-## Getting Started with Hugo
-
-Once you have Hugo installed, you can start building your website with these basic steps:
-
-1.  **Create a new site:** Use the command `hugo new site my-website` to create a new directory with the necessary folder structure.
-2.  **Add a theme:** Hugo uses themes to control the appearance of your site. You can find a variety of themes on the official Hugo themes website.
-3.  **Create content:** You can create new content using Markdown files.
-4.  **Start the Hugo server:** To see your site in action, run the command `hugo server -D` to start a local server.
-
 ## Updating Hugo on Linux (Debian/Ubuntu)
 
 When you need to upgrade to a specific version of Hugo, especially one that is not yet available in your system's default repositories, the recommended method is to download the official pre-compiled binary.
@@ -73,15 +64,9 @@ Here are the steps to update Hugo to a specific version:
     rm hugo_extended_0.128.0_linux-amd64.deb
     ```
 
-## Detailed Plan: Creating a "blog" with the LoveIt Theme
+## Getting Started with Hugo
 
 This guide provides step-by-step instructions to create a new Hugo project named `blog`, integrate the `LoveIt` theme, and create your first post.
-
-### Prerequisites
-
-Ensure you have Hugo and Git installed on your system.
-
-### Step-by-Step Guide
 
 1.  **Create a New Hugo Site:**
     Open your terminal and run the following command to create a new Hugo site in a folder named `blog`.
